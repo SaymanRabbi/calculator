@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+:root {
+  --color-bg: rgb(47, 0, 90);
+  --gr-1: radial-gradient(
+    circle 929px at 0.6% 1.3%,
+    rgb(10, 251, 130) 0%,
+    rgba(248, 47, 47, 1) 82.6%
+  );
+  --gr-2: radial-gradient(
+    circle 972.6px at 10% 20%,
+    rgba(243, 0, 75, 1) 0%,
+    rgba(255, 93, 75, 1) 90%
+  );
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(#2196f3 , #e91e63);
+}
+.container{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+.square{
+  position: absolute;
+  bottom: -100px;
+  background-color: #f2fefe;
+  animation: boxes 10s infinite ease-in-out;
+}
+.square:nth-child(1){
+  width: 75px;
+  height: 75px;
+  left: 7%;
+  
+}
+.square:nth-child(2){
+  width: 65px;
+  height: 65px;
+  left: 15%;
+  animation-delay: 4s;
+}
+.square:nth-child(3){
+  width: 82px;
+  height: 82px;
+  left: 45%;
+  animation-delay: 8s;
+}
+.square:nth-child(4){
+  width: 70px;
+  height: 70px;
+  left: 55%;
+  animation-delay: 2s;
+}
+.square:nth-child(5){
+  width: 60px;
+  height: 60px;
+  left: 27%;
+  animation-delay: 6s;
+}
+.square:nth-child(6){
+  width: 55px;
+  height: 55px;
+  left: 60%;
+  animation-delay: 4s;
+}
+.square:nth-child(7){
+  width: 90px;
+  height: 90px;
+  left: 85%;
+  animation-delay: 9s;
+}
+.square:nth-child(8){
+  width: 70px;
+  height: 70px;
+  left: 75%;
+  animation-delay: 4s;
+}
+.square:nth-child(9){
+  width: 45px;
+  height: 45px;
+  left: 10%;
+  animation-delay: 7s;
+}
+.square:nth-child(10){
+  width: 55px;
+  height: 55px;
+  left: 60%;
+  animation-delay: 7s;
+}
+@keyframes boxes {
+  0% {
+    bottom: -100px;
+  }
+  100%{
+    bottom: 100%;
+    transform: rotate(180deg);
+    opacity: 0;
+  }
+  
+}
+/* ------calulator part------ */
+.center-con::after,
+.center-con::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-image: var(--gr-1);
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.center-con::before{
+  left: 100%;
+  top: 100%;
+  background-image: var(--gr-2);
+}
+
+.calc{
+  position: absolute;
+  width: 18rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 4px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.display{
+  position: relative;
+  height: 10rem;
+}
+
+.screen {
+  position: absolute;
+  bottom: 0.5rem;
+  width: 94%;
+  font-size: 3em;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  text-align: right;
+  color: white;
+}
+
+.operators{
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.1);
+  right: 0;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  z-index: -1;
+}
+
+.buttons{
+  height: 20rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.buttons > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  font-size: 1.2em;
+}
+
+.buttons > div:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.buttons > div:active {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+sup{
+  font-size: 0.8em;
+  transform: translateY(-6px);
+}
